@@ -1,0 +1,5 @@
+User pool id: eu-central-1_kVy5vud6a
+User pool arn: arn:aws:cognito-idp:eu-central-1:322653911670:userpool/eu-central-1_kVy5vud6a
+App client id: 2d6lpca8he0gao4hc4a3gro4fd
+Identity pool id: eu-central-1:6eaecaa6-58f1-420f-9a97-ac544534c9e6
+Identity pool arn: arn:aws:cognito-identity:eu-central-1:322653911670:identitypool/eu-central-1:6eaecaa6-58f1-420f-9a97-ac544534c9e6

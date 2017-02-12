@@ -47,7 +47,26 @@ apigClient.methodName(params, body, additionalParams)
       // Add error callback code here.
     });
 
+function onFacebookLogin(fbtoken) {
+  // get cognito credentials
+  AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+    IdentityPoolId: 'eu-central-1:6eaecaa6-58f1-420f-9a97-ac544534c9e6',
+    Logins: {'graph.facebook.com': fbtoken}
+  });
+  AWS.config.credentials.get(function(err) {
+    if (err) {return console.error('Credentials error: ', err);}
 
+    /* I'm assuming that this is what I use for accessKey and secretKey */
+    var credentials = AWS.config.credentials;
+    var apigClient = apigClientFactory.newClient({
+    accessKey: 'ACCESS_KEY',
+    secretKey: 'SECRET_KEY',
+    sessionToken: 'SESSION_TOKEN', //OPTIONAL: If you are using temporary credentials you must include the session token
+    region: 'eu-central-1' // OPTIONAL: The region where the API is deployed, by default this parameter is set to us-east-1
+});
+
+  });
+}
 </script>
 
 

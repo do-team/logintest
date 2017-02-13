@@ -152,6 +152,7 @@ function apiVerify(token) {
     });
     request.open(method, url);
     request.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    request.setRequestHeader("Access-Control-Allow-Credentials", "true");
     request.setRequestHeader("test", token);
     request.setRequestHeader("cache-control", "no-cache");
     request.send();

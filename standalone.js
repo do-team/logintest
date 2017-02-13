@@ -134,3 +134,26 @@ function setCredentials(token)
    });
    AWS.config.credentials.params.Logins[loginId] = token;
 }
+
+function apiVerify(token) {
+    var data = null;
+    var url = "https://y3op33lkfd.execute-api.eu-central-1.amazonaws.com/PROD/in";
+    var method = "POST";
+    var async = true;
+
+
+    var request = new XMLHttpRequest();
+
+    request.withCredentials = true;
+    request.addEventListener("readystatechange", function () {
+        if (this.readyState === 4) {
+            console.log(this.responseText);
+        }
+    });
+    request.open(method, url);
+    request.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    request.setRequestHeader("test", token);
+    request.setRequestHeader("cache-control", "no-cache");
+    request.send();
+}
+
